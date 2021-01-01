@@ -2,6 +2,8 @@
 @charset "utf-8";
 
 @import "node_modules/reset-css/sass/_reset";
+@use "@material/card";
+@include card.core-styles;
 
 //variables
 $text-color: #212121;

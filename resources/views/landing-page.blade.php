@@ -38,7 +38,7 @@
                    </div> 
                </div><!--end of hero-copy-->
                <div class="hero-image">
-                    <img src="img/products/laptop-1.png" alt="hero image">
+                    <img src="img/products/laptop-hero.png" alt="hero image">
                 </div>
 
            </div><!--end hero-->
@@ -56,6 +56,11 @@
                 </div>
 
             <div class="products text-center">
+                <div class="product">
+                    <a href="{{ route('shop.show', $product->slug)}}"><img src="{{ asset('img/products/'.$product->slug.".png")}}" alt="product"></a>
+                        <a href="{{ route('shop.show', $product->slug)}}"><span class="product-name">{{ $product-> name }}</span></a>
+                        <div class="product-price">{{ $product->presentPrice() }}</div>
+                    </div>
                 @foreach($products as $product)
                     <div class="product">
                     <a href="{{ route('shop.show', $product->slug)}}"><img src="{{ asset('img/products/'.$product->slug.".png")}}" alt="product"></a>
