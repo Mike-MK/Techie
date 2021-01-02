@@ -16,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','LandingPageController@index');
 Route::get('/shop','ShopPageController@index')->name('shop.index');
 Route::get('/shop/{product}','ShopPageController@show')->name('shop.show');
+Route::get('/cart','CartController@index')->name('cart');
 
 Route::get('/product','ProductPageController@index');
+
+Route::post('cart', 'CartController@store')->name('cart.store');

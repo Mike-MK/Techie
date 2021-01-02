@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -21,10 +22,10 @@
            <div class="top-nav container">
                <div class="logo">Techie</div>
                <ul>
-                   <li><a href="#">Shop</a></li>
+                   <li><a href="/shop">Shop</a></li>
                    <li><a href="#">About</a></li>
-                   <li><a href="#">Blog</a></li>
-                   <li><a href="#">Cart</a></li>
+                   <li><a href="/blog">Blog</a></li>
+                   <li><a href="/cart">Cart</a></li>
                </ul>
            </div><!--end of top-nav-->
 
@@ -56,12 +57,7 @@
                 </div>
 
             <div class="products text-center">
-                <div class="product">
-                    <a href="{{ route('shop.show', $product->slug)}}"><img src="{{ asset('img/products/'.$product->slug.".png")}}" alt="product"></a>
-                        <a href="{{ route('shop.show', $product->slug)}}"><span class="product-name">{{ $product-> name }}</span></a>
-                        <div class="product-price">{{ $product->presentPrice() }}</div>
-                    </div>
-                @foreach($products as $product)
+                    @foreach($products as $product)
                     <div class="product">
                     <a href="{{ route('shop.show', $product->slug)}}"><img src="{{ asset('img/products/'.$product->slug.".png")}}" alt="product"></a>
                         <a href="{{ route('shop.show', $product->slug)}}"><span class="product-name">{{ $product-> name }}</span></a>

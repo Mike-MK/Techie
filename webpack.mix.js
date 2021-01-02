@@ -15,4 +15,5 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/responsive.scss', 'public/css')
     .sass('resources/sass/shop.scss', 'public/css')
-    .sass('resources/sass/product.scss', 'public/css');
+    .sass('resources/sass/product.scss', 'public/css')
+    .sass('resources/sass/cart.scss', 'public/css');

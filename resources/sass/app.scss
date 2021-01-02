@@ -2,8 +2,7 @@
 @charset "utf-8";
 
 @import "node_modules/reset-css/sass/_reset";
-@use "@material/card";
-@include card.core-styles;
+
 
 //variables
 $text-color: #212121;
@@ -91,13 +90,12 @@ img{
 header{
     background: $gray-background;
     color: $white;
-    padding: 40px 0;
+    padding: 20px 0;
     
     .top-nav{
         display: flex;
         justify-content: space-between;
-        padding:40px 0;
-
+        padding:20px 0;
     .logo{
         font-weight: bold;
         font-size: 28px;

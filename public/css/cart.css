@@ -1,0 +1,52 @@
+.cart {
+  margin: 40px 20% 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding-left: 5%;
+  padding-top: 20x;
+}
+
+.cart-items > li {
+  max-width: 70%;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-bottom: solid 1px grey;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+.small {
+  max-width: 200px !important;
+}
+
+.coupon-container {
+  padding-top: 20px;
+}
+
+.apply-textarea {
+  height: 40px;
+  width: 40%;
+}
+
+.action-button {
+  border: 1px solid #212121;
+  padding: 5px 10px;
+  width: 40px;
+}
+
+.action-button i {
+  margin: auto;
+}
+
+.action-button:hover {
+  color: #e9e9e9;
+  background: #212121;
+}
+
+.total {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+

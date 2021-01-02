@@ -46,9 +46,17 @@
                 <p class="product-description">{{$product-> details}}</p>
                 <span class="product-price">{{$product->presentPrice()}}</span>
             <p class="product-details">{{$product->description}}</p>
-                <div class="cart-button">
-                    <button class="button">Add to Cart</button>
-                </div>
+               
+                <form action="{{route('cart.store')}}" method="post">
+                    {{csrf_field()}}
+                    <input type="hidden" name="id" value="{{ $product->id}}">
+                    <input type="hidden" name="name" value="{{ $product->name}}">
+                    <input type="hidden" name="price" value="{{ $product->price}}">
+
+                    <div class="cart-button">
+                        <button class="button">Add to Cart</button>
+                    </div>
+                </form>
             </div>  
         </div>
         <div class="more-products">

@@ -1,6 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
     "/css/responsive.css": "/css/responsive.css",
     "/css/shop.css": "/css/shop.css",
-    "/css/product.css": "/css/product.css"
+    "/css/product.css": "/css/product.css",
+    "/css/cart.css": "/css/cart.css"
 }
