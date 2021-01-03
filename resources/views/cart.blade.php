@@ -37,9 +37,29 @@
                 <span>Cart</span>
                 <i class="fa fa-chevron-right breadcrumb-separator"></i>
             </div>
-        </div>
+        </div>  
         <div class="cart container">
-            <h2>Items in Cart</h2>
+            <div>
+                @if (session()->has('success_message'))
+                    <div class="alert alert-success">
+                        {{ session()-> get('success_message')}}
+                    </div>
+                @endif
+
+                @if(count($errors) >0)
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+            </div>
+            @if (Cart::count() > 0)
+
+            <h2>{{ Cart::count() }} Item(s) in Cart!</h2>
             <ul class="cart-items">
                 <li>
                     <img src="{{asset('img/products/laptop-1.png')}}" alt="product image" class="small">
@@ -64,7 +84,7 @@
                     </div>
                 </li>
                 <li>
-                    <img src="{{asset('img/products/laptop-1.png')}}" alt="product image" class="small">
+                    <img src="{{ asset('img/products/laptop-1.png')}}" alt="product image" class="small">
                     <div class="product-details">
                         <span>MacBook Pro</span>
                         <span>15 inch, 1TB SSD, 32GB RAM</span>
@@ -75,6 +95,11 @@
                     </div>
                 </li>
             </ul>
+
+            @else
+                <h3>No items in cart!</h3>
+            @endif
+
             <div class="coupon-container">
                 <input type="text" class="apply-textarea" placeholder="Enter Coupon Code Here">
                 <button class="button apply">Apply</button>
