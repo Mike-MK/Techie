@@ -57,43 +57,25 @@
                 @endif
 
             </div>
-            @if (Cart::count() > 0)
-
+            @if  (Cart::count() > 0)
+            
             <h2>{{ Cart::count() }} Item(s) in Cart!</h2>
             <ul class="cart-items">
+                @foreach(Cart::content() as $item)
                 <li>
-                    <img src="{{asset('img/products/laptop-1.png')}}" alt="product image" class="small">
+                    <a href="#"><img src="{{asset('img/products/'.$item->model->slug.'.png')}}" alt="product image" class="small"></a>
                     <div class="product-details">
-                        <span>MacBook Pro</span>
-                        <span>15 inch, 1TB SSD, 32GB RAM</span>
+                        <span><a href="#">{{ $item->model->name}}</a></span>
+                        <span>{{ $item->model->details }}</span>
                     </div>
                     <div class="product-options">
                         <button class="action-button"><i class="fa fa-trash"></i></button>
                         <button class="action-button"><i class="fa fa-heart"></i></button>
                     </div>
+                    <div>{{$item->model->presentPrice()}}</div>
                 </li>
-                <li>
-                    <img src="{{asset('img/products/laptop-1.png')}}" alt="product image" class="small">
-                    <div class="product-details">
-                        <span>MacBook Pro</span>
-                        <span>15 inch, 1TB SSD, 32GB RAM</span>
-                    </div>
-                    <div class="product-options">
-                        <button class="action-button"><i class="fa fa-trash"></i></button>
-                        <button class="action-button"><i class="fa fa-heart"></i></button>
-                    </div>
-                </li>
-                <li>
-                    <img src="{{ asset('img/products/laptop-1.png')}}" alt="product image" class="small">
-                    <div class="product-details">
-                        <span>MacBook Pro</span>
-                        <span>15 inch, 1TB SSD, 32GB RAM</span>
-                    </div>
-                    <div class="product-options">
-                        <button class="action-button"><i class="fa fa-trash"></i></button>
-                        <button class="action-button"><i class="fa fa-heart"></i></button>
-                    </div>
-                </li>
+                @endforeach
+
             </ul>
 
             @else

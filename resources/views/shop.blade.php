@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/shop.css')}}">
+        <link rel="stylesheet" href="{{ asset('css/shop.css')}}">
         
     </head>
     <body>
@@ -53,7 +53,7 @@
                 @foreach($products as $product)
                    <div class="product">
                    <a href="{{ route('shop.show', $product->slug)}}"><img src="{{ asset('img/products/'.$product->slug.".png")}}" alt="product"></a>
-                    <a href="{{ route('shop.show', $product->slug)}}"><span class="product-name">{{ $product-> name }}</span></a>
+                    <a href="{{ route('shop.show', $product->slug)}}"><span class="product-name">{{ $product->name }}</span></a>
                     <div class="product-price">{{ $product->presentPrice() }}</div>
                     </div>
                 @endforeach

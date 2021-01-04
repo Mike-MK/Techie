@@ -28,4 +28,3 @@
                </ul>
            </div><!--end of top-nav-->
         </header>
-        </body>
