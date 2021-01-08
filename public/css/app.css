@@ -262,6 +262,15 @@ header .top-nav ul a:hover {
   color: #d0d0d0;
 }
 
+.cart-count {
+  border: solid 1px transparent;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: yellow;
+  color: #212121;
+  font-weight: bold;
+}
+
 .hero-container {
   display: grid;
   grid-template-columns: 1fr 1fr;

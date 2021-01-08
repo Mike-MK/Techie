@@ -22,5 +22,8 @@ class CartController extends Controller
       ->associate('App\Product');
       return redirect()->route('cart.index')->with('success_message','Item was added to cart');
     }
-    
+    public function destroy($id){
+      Cart::remove($id);
+      return back()->with('success_message','Item has been removed');
+    }
 }

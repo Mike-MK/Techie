@@ -115,6 +115,14 @@ header{
     }
     }      
 }
+.cart-count{
+    border: solid 1px transparent;
+    border-radius: 50%;
+    padding:5px;
+    background-color: yellow;
+    color: $text-color;
+    font-weight: bold;
+}
 .hero-container{
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -23,10 +23,14 @@
            <div class="top-nav container">
                <div class="logo">Techie</div>
                <ul>
-                   <li><a href="#">Shop</a></li>
+                   <li><a href="{{ route('shop.index')}}">Shop</a></li>
                    <li><a href="#">About</a></li>
                    <li><a href="#">Blog</a></li>
-                   <li><a href="#">Cart</a></li>
+                   <li><a href="{{ route('cart.index') }}">Cart 
+                        @if(Cart::instance('default')->count() > 0)
+                            <span class="cart-count">{{ Cart::instance('default')->count() }} </span>
+                        @endif
+                    </a></li>
                </ul>
            </div><!--end of top-nav-->
        </header>
@@ -69,7 +73,11 @@
                         <span>{{ $item->model->details }}</span>
                     </div>
                     <div class="product-options">
-                        <button class="action-button"><i class="fa fa-trash"></i></button>
+                        <form action="{{ route('cart.destroy', $item->rowId) }}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE')}}
+                            <button class="action-button" type='submit'><i class="fa fa-trash"></i></button>
+                        </form>
                         <button class="action-button"><i class="fa fa-heart"></i></button>
                     </div>
                     <div>{{$item->model->presentPrice()}}</div>
@@ -80,6 +88,7 @@
 
             @else
                 <h3>No items in cart!</h3>
+                <a href="{{ route('shop.index') }}"><h3>Continue Shopping<h3></a>
             @endif
 
             <div class="coupon-container">
@@ -87,15 +96,21 @@
                 <button class="button apply">Apply</button>
             </div>
             <div class="checkout-container">
-                <div class="total">
-                    <span>Subtotal</span>
-                    <span>Tax</span>
-                    <span>Total</span>
+                <div class="cart-totals-right">
+                    Subtotal <br>
+                    Tax <br>
+                    <span class="cart-totals-total">Total</span>
                 </div>
-                <div class="checkout">
-                    <button class="text-center button">Checkout</button>
+                <div class="cart-totals-subtotal">
+                    {{ Cart::subtotal() }} <br>
+                    {{ Cart::tax() }} <br>
+                    <span class="cart-totals-total">{{ Cart::total() }}</span>
                 </div>
             </div>
+            <div class="checkout">
+                <button class="text-center button">Checkout</button>
+            </div>
+        </div>
         </div>
 
        <footer>

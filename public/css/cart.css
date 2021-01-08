@@ -45,10 +45,19 @@
   background: #212121;
 }
 
-.total {
+.checkout-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   text-align: right;
+  background-color: lightgrey;
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.cart-totals-total {
+  font-weight: bold;
 }
 
 .alert {

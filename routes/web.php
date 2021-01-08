@@ -17,6 +17,8 @@ Route::get('/','LandingPageController@index');
 Route::get('/shop','ShopPageController@index')->name('shop.index');
 Route::get('/shop/{product}','ShopPageController@show')->name('shop.show');
 Route::get('/cart','CartController@index')->name('cart.index');
+Route::delete('/cart/{product}','CartController@destroy')->name('cart.destroy');
+
 
 //Test route
 Route::get('empty', function (){
